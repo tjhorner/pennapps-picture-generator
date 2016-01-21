@@ -29,13 +29,13 @@ var app = (function(){
   }
 
   function save(){
-    html2canvas(picture, {
-      allowTaint: true,
-      useCORS: true,
-      onrendered: function(canvas){
-        Canvas2Image.saveAsPNG(canvas);
-      }
-    });
+    // html2canvas(picture, {
+    //   allowTaint: true,
+    //   useCORS: true,
+    //   onrendered: function(canvas){
+    //     Canvas2Image.saveAsPNG(canvas);
+    //   }
+    // });
   }
 
   function fbLogin(){

@@ -23,9 +23,18 @@ var app = (function(){
     });
   }
 
+  function fbLogin(){
+    FB.login(function(){
+      FB.api("/me/picture?type=large", function(response){
+        if(response && !response.error) picture.style.backgroundImage = "url(" + response.data.url + ")";
+      });
+    });
+  }
+
   return {
     setImageFromFile: setImageFromFile,
     setImageFromUrl: setImageFromUrl,
-    save: save
+    save: save,
+    fbLogin: fbLogin
   };
 }());

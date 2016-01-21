@@ -11,7 +11,9 @@
   <body>
     <div id="content">
       <h1>The Magical PennApps Profile Picture Generator</h1>
-      <h2>Select a file</h2>
+      <h2>Log In with Facebook</h2>
+      <button onclick="app.fbLogin()">Log In</button>
+      <h3>Select a file</h3>
       <input type="file" id="filepick" onchange="app.setImageFromFile()"></input>
       <h3>Or use a direct URL</h3>
       <input type="text" id="url" onblur="app.setImageFromUrl()"></input>
@@ -27,5 +29,22 @@
       <br/>
       <button onclick="app.save()">Look good? SAVE IT! (rename as [whatever].png)</button>
     </div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId: '1700150266898187',
+          xfbml: true,
+          version: 'v2.5'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
   </body>
 </html>

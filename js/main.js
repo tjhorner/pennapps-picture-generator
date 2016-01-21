@@ -25,7 +25,7 @@ var app = (function(){
 
   function fbLogin(){
     FB.login(function(){
-      FB.api("/me/picture?type=large", function(response){
+      FB.api("/me/picture?type=large&width=500", function(response){
         if(response && !response.error) picture.style.backgroundImage = "url(" + response.data.url + ")";
       });
     });
